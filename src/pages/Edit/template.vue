@@ -4,4 +4,4 @@
 
 <script src="./template.js"></script>
 
-<style scoped src="./template.css"></style>
+<style scoped src="./template.less"></style>
