@@ -4,13 +4,15 @@
 </footer>
 </template>
 
-<style lang="less" scoped>
+<style lang="less" >
 footer {
   align-self: end;
-  background-color: #d7d7d7;
-  color: #666;
-  font-size: 13px;
+  background-color: #ffffff;
+  color: black;
+  font-weight: 700;
+  font-size: 16px;
   padding: 10px;
   text-align: center;
+  margin-top: 20px;
 }
 </style>

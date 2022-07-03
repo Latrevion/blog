@@ -1,10 +1,10 @@
 <template>
   <header :class="{login: isLogin, 'no-login': !isLogin}">
     <template v-if="!isLogin">
-      <h1>Let's share</h1>
+      <router-link to="#/"><h1>Let's share</h1></router-link>
       <p>精品博客汇聚</p>
       <div class="btns">
-        <router-link to="/login"><el-button >立即登录</el-button></router-link>
+        <router-link to="/login"><el-button>立即登录</el-button></router-link>
         <router-link to="/register"><el-button>注册账号</el-button></router-link>
       </div>
     </template>
@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import auth from '@/api/auth'
+import auth from "@/api/auth"
 window.auth = auth
-import { mapGetters, mapActions } from 'vuex'
+import {mapGetters, mapActions} from "vuex"
 export default {
   data() {
     return {}
@@ -33,8 +33,8 @@ export default {
 
   computed: {
     ...mapGetters([
-      'isLogin',
-      'user'
+      "isLogin",
+      "user"
     ])
   },
 
@@ -43,8 +43,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'checkLogin',
-      'logout'
+      "checkLogin",
+      "logout"
     ]),
     onLogout() {
       this.logout()
@@ -61,13 +61,16 @@ export default {
 
 header.no-login {
   padding: 0 12% 30px 12%;
-  background: @bgColor;
+  background: #42b983;
   display: grid;
   justify-items: center;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 20px;
 
   h1 {
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
+    padding: 10px 0;
     margin: 60px 0 0 0;
     text-transform: uppercase;
   }
@@ -91,21 +94,27 @@ header.login {
   display: flex;
   align-items: center;
   background: @bgColor;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 20px;
 
   h1 {
     margin: 0;
-    padding: 0;
-    font-size: 40px;
+    font-size: 30px;
+    padding: 10px 0;
     text-transform: uppercase;
     flex: 1;
 
     a {
-      color: #fff;
+      color: #303133;
+
+      &:hover {
+        border-bottom: 3px solid #42b983;
+      }
     }
   }
 
   .edit {
-    color: #fff;
+    color: #303133;
     font-size: 30px;
   }
 
@@ -126,7 +135,7 @@ header.login {
       right: 0;
       list-style: none;
       border: 1px solid #eaeaea;
-      margin:0;
+      margin: 0;
       padding: 0;
       background-color: #fff;
 
@@ -148,7 +157,6 @@ header.login {
     }
   }
 }
-
 
 
 </style>
