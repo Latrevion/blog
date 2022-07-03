@@ -6,7 +6,7 @@ export default {
       blogs: [],
       user: {},
       page: 1,
-      total: 0
+      total: 0,
     }
   },
   created() {
