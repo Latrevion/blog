@@ -6,7 +6,8 @@ export default {
     return {
       blogs: [],
       page: 1,
-      total: 0
+      total: 0,
+      value:true
     }
   },
 

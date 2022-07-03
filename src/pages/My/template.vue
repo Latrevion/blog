@@ -24,6 +24,7 @@
         layout="prev, pager, next"
         :total="total"
         :current-page="page"
+        :hide-on-single-page="value"
         @current-change="onPageChange">
       </el-pagination>
     </section>

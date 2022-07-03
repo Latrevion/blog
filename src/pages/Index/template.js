@@ -13,7 +13,8 @@ export default {
     blog.getIndexBlogs({page:this.page}).then(res => {
       this.blogs = res.data
       this.total = res.total
-      this.page  = res.page
+      this.page = res.page
+      this.totalPage  = (res.totalPage)*10
     })
   },
 
@@ -22,7 +23,9 @@ export default {
       blog.getIndexBlogs({page:newPage}).then(res => {
         this.blogs = res.data
         this.total = res.total
-        this.page  = res.page
+        console.log(this.total)
+        // this.page  = res.page
+        this.page  = res.totalPage
         this.$router.push({path:'/',query:{page:newPage}})
       })
     }
