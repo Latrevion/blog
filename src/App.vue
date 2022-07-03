@@ -35,7 +35,7 @@ export default {
   grid-template-areas:'header header  header '
                         '.  main  .'
                          'footer footer footer';
-
+  background: #f3f3f3;
  #header{
    grid-area: header;
    padding-left: 12%;
@@ -44,6 +44,10 @@ export default {
 
   #main{
     grid-area: main;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 600px;
   }
 
   #footer{
