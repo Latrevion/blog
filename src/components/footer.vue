@@ -1,6 +1,6 @@
 <template>
 <footer>
-  <p>@Latrevion@github.com 2022</p>
+  <p>Latrevion@github.com 2022</p>
 </footer>
 </template>
 
