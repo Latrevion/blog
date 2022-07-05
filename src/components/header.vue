@@ -104,9 +104,10 @@ header.login {
     padding: 10px 0;
     text-transform: uppercase;
     flex: 1;
+    color: #42b983;
 
     a {
-      color: #303133;
+      color: #42b983;
 
       &:hover {
         border-bottom: 3px solid #42b983;
@@ -115,16 +116,25 @@ header.login {
   }
 
   .edit {
-    color: #303133;
+    color: #42b983;
     font-size: 30px;
+    transition: all .3s linear;
   }
+
+  .edit:hover{
+    transform: scale(1.3);
+    transition: transform .3s ;
+  }
+
 
   .avatar {
     width: 40px;
     height: 40px;
-    border: 1px solid #fff;
+    border: 2px solid #eaeaea;
     border-radius: 50%;
     margin-left: 15px;
+
+
   }
 
   .user {
@@ -148,7 +158,8 @@ header.login {
         padding: 5px 10px;
 
         &:hover {
-          background-color: #eaeaea;
+          background-color: #42b983;
+          color: #ffffff;
         }
       }
     }
