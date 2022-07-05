@@ -1,5 +1,6 @@
 <template>
-  <div id="edit">
+  <Loading v-if="hide"></Loading>
+  <div id="edit" v-else>
     <h1>创建文章</h1>
     <h3>文章标题</h3>
     <el-input v-model="title" maxlength="30"></el-input>
@@ -23,5 +24,4 @@
 </template>
 
 <script src="./template.js"></script>
-
 <style scoped src="./template.less"></style>

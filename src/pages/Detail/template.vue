@@ -1,5 +1,7 @@
 <template>
-  <div id="detail">
+  <div>
+    <Loading v-if="hide"></Loading>
+    <div id="detail" v-else>
     <section class="user-info">
       <router-link :to="`/user/${user.id}`" class="avatar"><img :src="user.avatar" :alt="user.username" :title="user.username" ></router-link>
       <h3>{{title}}</h3>
@@ -7,6 +9,7 @@
     </section>
     <section class="article" v-html="markdown">
     </section>
+  </div>
   </div>
 </template>
 

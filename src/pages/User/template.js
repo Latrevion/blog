@@ -1,15 +1,19 @@
 import blog from "@/api/blog"
-
+import Loading from "@/components/Loading"
+import fa from "element-ui/src/locale/lang/fa"
 export default {
+  components:{Loading},
   data() {
     return {
       blogs: [],
       user: {},
       page: 1,
       total: 0,
+      hide:false
     }
   },
-  created() {
+  beforeMount() {
+    this.hide=true
     this.userId = this.$route.params.userId
     this.page =this.$route.query.page || 1
     blog.getBlogsByUserId(this.userId, {page: this.page}).then(res => {
@@ -21,6 +25,9 @@ export default {
         }
       }
     )
+    setTimeout(()=>{
+      this.hide =false
+    },800)
   },
   methods:{
     onPageChange(newPage){

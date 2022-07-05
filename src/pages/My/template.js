@@ -1,13 +1,16 @@
 import blog from '@/api/blog'
 import { mapGetters } from 'vuex'
+import Loading from "@/components/Loading"
 
 export default {
+  components:{Loading},
   data () {
     return {
       blogs: [],
       page: 1,
       total: 0,
-      value:true
+      value:true,
+      hide:false
     }
   },
 
@@ -15,7 +18,8 @@ export default {
     ...mapGetters(['user'])
   },
 
-  created() {
+  beforeMount() {
+    this.hide =true
     this.page = parseInt(this.$route.query.page) || 1
     blog.getBlogsByUserId(this.user.id, { page: this.page })
       .then(res => {
@@ -24,6 +28,9 @@ export default {
         this.total = res.total
         this.blogs = res.data
       })
+    setTimeout(()=>{
+      this.hide =false
+    },800)
   },
 
   methods: {

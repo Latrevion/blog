@@ -1,10 +1,12 @@
 <template>
-  <div id="app">
+  <div>
+    <div id="app">
     <Header id="header"></Header>
     <main id="main">
       <router-view/>
     </main>
     <Footer id="footer"></Footer>
+  </div>
   </div>
 </template>
 
@@ -17,7 +19,7 @@ export default {
   components: {
     Header: Header,
     Footer: Footer
-  }
+  },
 }
 
 
