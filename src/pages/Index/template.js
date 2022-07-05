@@ -6,6 +6,7 @@ export default {
       blogs: [],
       total: 0,
       pager: 1,
+      totalPage:0
     }
   },
   created() {

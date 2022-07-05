@@ -48,6 +48,7 @@ export default {
     ]),
     onLogout() {
       this.logout()
+      this.$router.replace("/index");
     }
   }
 

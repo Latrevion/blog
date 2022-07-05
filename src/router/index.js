@@ -8,7 +8,6 @@ import Create from '@/pages/Create/template.vue'
 import Register from '@/pages/Register/template.vue'
 import User from '@/pages/User/template.vue'
 import My from '@/pages/My/template.vue'
-
 import store from "@/store"
 
 
@@ -18,6 +17,11 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      redirect: '/index'
+    },
+    {
+      path: '/index',
+      name: 'Index',
       component: Index
     },
     {
@@ -59,15 +63,11 @@ router.beforeEach((to,from,next)=>{
   if (to.matched.some(record=>record.meta.requiresAuth)){
     store.dispatch('checkLogin').then(isLogin=>{
       if (!isLogin){
-        next({
-          path:'/login',
-          query:{redirect:to.fullPath}
-        })
+        next('/login')
       }else{
         next()
       }
     })
-
   }else {
     next()
   }
