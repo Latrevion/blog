@@ -37,6 +37,7 @@ export default {
         // this.page  = res.page
         this.page = res.totalPage
         this.$router.push({path: "/", query: {page: newPage}})
+        window.scroll(0,0)
       })
     }
   }
