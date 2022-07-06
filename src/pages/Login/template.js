@@ -3,8 +3,8 @@ import {mapActions} from "vuex"
 export default {
   data() {
     return {
-      username: "",
-      password: ""
+      username: "Latrevion",
+      password: '123456'
     }
   },
 
